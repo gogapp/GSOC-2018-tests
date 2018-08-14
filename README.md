@@ -1,10 +1,10 @@
 # GSOC-2018-tests
 This repository contains the test experiments done during GSoC 2018. Please note that this writeup assumes that you already have [dpdk](http://doc.dpdk.org/guides/linux_gsg/index.html) installed on your computer. Also you must be using a linux based OS on your computer(This code has been tested on Ubuntu 16.04LTS).
 
-## Testing Space Saving Algorithm
 Clone the github repository
 ```
 git clone https://github.com/gogapp/GSOC-2018-tests.git
+cd ~/GSOC-2018-tests/
 ```
 Install the following dependencies:
 ```
@@ -23,9 +23,17 @@ cd ${RTE_SDK}
 sudo ifconfig enp0s8 down
 sudo ./usertools/dpdk-devbind.py --bind=uio_pci_generic enp0s8
 ```
+## Testing Space Saving Algorithm
 Run the following code to build the test and to run it.
 ```
-cd GSOC-2018-tests
+cd ~/GSOC-2018-tests/space_saving/
+make
+sudo ./build/blackholing -c 0x3 -n 2
+```
+## Testing RHHH Algorithm
+Run the following code to build the test and to run it.
+```
+cd ~/GSOC-2018-tests/RHHH/
 make
 sudo ./build/blackholing -c 0x3 -n 2
 ```
